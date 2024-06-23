@@ -1,12 +1,10 @@
-def palindrom_string(name):
-    sting_name = "".join(reversed(name))
-    print(sting_name)
-    if name == sting_name:
+def palindrome_string(name1):
+    sting_name = "".join(reversed(name1))
+    if name1 == sting_name:
         print("String in palindrom")
     else:
         print("Not palindrome")
 
 
-#
-name = str(input("Enter the string: "))
-palindrom_string(name)
+name = str(input("Enter the string: ").lower())
+palindrome_string(name)
