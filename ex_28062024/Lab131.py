@@ -43,4 +43,4 @@ if secret_pass == "1234":
     jp_chase.if_you_are_auth_user(True, balance=your_amount)
     jp_chase.if_you_are_auth(True)
 else:
-    jp_chase.if_you_are_auth_user(False)
+    jp_chase.if_you_are_auth_user(False, your_amount)
