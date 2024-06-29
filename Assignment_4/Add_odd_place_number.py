@@ -16,4 +16,4 @@ print("Digits from even positions:", result_digits)
 number = "8976549"
 for index in range(0, len(number)):
     if index % 2 != 0 and index != 0:
-        print(number[index], index)
+        print("Value:",number[index], "at this location:", index)
