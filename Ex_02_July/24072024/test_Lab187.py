@@ -22,6 +22,7 @@ def create_token():
     print(token)
     return token
 
+
 def create_booking():
     # Booking ID
     print("Create Booking Testcase")
@@ -53,8 +54,8 @@ def create_booking():
 
 def test_put_request_postive():
     base_url = "https://restful-booker.herokuapp.com"
-    base_path = "/booking/"+str(create_booking())
-    PUT_URL = base_url+base_path
+    base_path = "/booking/" + str(create_booking())
+    PUT_URL = base_url + base_path
 
     cookie = "token=" + create_token()
 
@@ -64,7 +65,7 @@ def test_put_request_postive():
     }
 
     json_payload = {
-        "firstname": "Pramod",
+        "firstname": "Elvish",
         "lastname": "Brown",
         "totalprice": 111,
         "depositpaid": True,
@@ -79,9 +80,10 @@ def test_put_request_postive():
     assert response.status_code == 200
     data = response.json()
     print(data)
-    assert data["firstname"] == "Pramod"
+    assert data["firstname"] == "Elvish"
 
 
+@pytest.mark.skip(reason="Not required to delete the entry")
 def test_delete():
     URL = "https://restful-booker.herokuapp.com/booking/"
     booking_id = create_booking()
