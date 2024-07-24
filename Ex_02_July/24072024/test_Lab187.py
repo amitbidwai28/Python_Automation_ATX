@@ -9,7 +9,7 @@ import pytest  # pip instal pytest
 import requests  # pip install requests
 
 
-def test_create_token():
+def create_token():
     # token
     url = "https://restful-booker.herokuapp.com/auth"
     headers = {"Content-Type": "application/json"}
@@ -22,7 +22,7 @@ def test_create_token():
     print(token)
     return token
 
-def test_create_booking():
+def create_booking():
     # Booking ID
     print("Create Booking Testcase")
     URL = "https://restful-booker.herokuapp.com/booking"
@@ -53,10 +53,10 @@ def test_create_booking():
 
 def test_put_request_postive():
     base_url = "https://restful-booker.herokuapp.com"
-    base_path = "/booking/"+str(test_create_booking())
+    base_path = "/booking/"+str(create_booking())
     PUT_URL = base_url+base_path
 
-    cookie = "token=" + test_create_token()
+    cookie = "token=" + create_token()
 
     headers = {
         "Content-Type": "application/json",
@@ -84,9 +84,9 @@ def test_put_request_postive():
 
 def test_delete():
     URL = "https://restful-booker.herokuapp.com/booking/"
-    booking_id = test_create_booking()
+    booking_id = create_booking()
     DELETE_URL = URL + str(booking_id)
-    cookie_value = "token=" + test_create_token()
+    cookie_value = "token=" + create_token()
     headers = {
         "Content-Type": "application/json",
         "Cookie": cookie_value
