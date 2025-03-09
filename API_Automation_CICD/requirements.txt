@@ -1,0 +1,6 @@
+// Install the requests package
+pip install requests
+// Install the pytest package
+pip install pytest
+// Save the project dependencies to the requirements.txt file.
+pip freeze > requirements.txt
